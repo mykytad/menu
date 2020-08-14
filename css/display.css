@@ -56,6 +56,8 @@ body{
 	margin: 0 auto;
 	background: yellow;
 	border:1px solid red;
+	position: relative;
+	/*overflow: hidden;*/
 }
 .tcell{
 	display:table-cell;
@@ -100,28 +102,50 @@ body{
 	z-index: 5;
 }
 .menu li{
-	display: inline-block;
+	background: orange;
+	display: inline-block;	
 	margin-right: 20px;
 	cursor:pointer;
 	position: relative;
+	width: 200px;
 }
 .menu li:last-child{
 	margin: 0;
+	/*text-align: left;
+	padding: 20px 65px 20px 20px;*/
+	
 }
 .menu li a{
 	text-decoration: none;
 	display: block;
 	text-transform: uppercase;
 	font-size: 15px;
-	padding: 20px;
-	background: orange;
+	padding: 20px 20px 20px 20px;
+	position: relative;
+	
 }
-.first_lvl{
-	;
+.first_lvl>li a:before{
+    content: "";
+    background: url(../images/css_sprites.png);
+    background-position: -52px -104px;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.first_lvl>li+li>a:before{
+    background-position: -104px -104px;
+}
+
+.first_lvl>li+li+li>a:before{
+    background-position: -52px -52px; 	
+}
+.first_lvl>li+li+li:hover>a:before{
+    background-position: -104px 0;
 }
 .second_lvl{
 	display: none;
-	padding-bottom: 10px;
 	font-size: 15px;
 	position: absolute;
 	top: 100%;
@@ -129,11 +153,17 @@ body{
 }
 .second_lvl li{
 	margin: 0;
-	border-radius:15px
+}
+.second_lvl>li+li+li+li>a:before{
+	background-position:0 -104px;
+}
+.second_lvl>li+li+li+li:hover>a:before{
+    background-position: -104px 104px;
 }
 .third_lvl{
 	display: none;
 	position: absolute;
+	text-align: center;
 	top: 0;
 	right:100%;
 }
@@ -143,3 +173,64 @@ body{
 .second_lvl li:hover .third_lvl{
 	display: block;
 }
+
+
+
+
+.socialList>li{
+	display: inline-block;
+}
+.socialList>li>a{
+	display: block;
+	width: 50px;
+	height: 50px;
+	background: url('../images/css_sprites.png');
+	background-position: 0 0;
+}
+.socialList>li+li>a{
+	background-position: -52px 0;
+}
+.socialList>li+li+li>a{
+	background-position:0 -52px;
+}
+/*.socialList>li>a:before{
+	content: "";
+	background: url('../images/css_sprites.png');
+	background-position: -104px -104px;
+	width: 50px;
+	height: 50px;
+}*/
+.socialList2>li{
+	display:inline-block;
+}
+.socialList>li>a{
+	display: block;
+	width: 50px;
+	height: 50px;
+	
+}
+
+
+
+
+
+
+
+
+.wrapsocial{
+	position: relative;	
+	width: 50px;
+	height: 50px;
+	background: aqua;
+}
+.social2{
+	position: fixed;
+	bottom: 0;
+	right: 50%;
+}
+.social2>li>a{
+	display: block;
+	background: url('../images/css_sprites.png');
+	background-position: -104px 0;
+}
+.social2>li>a
