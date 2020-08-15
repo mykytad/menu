@@ -124,14 +124,14 @@ body{
 	position: relative;
 	
 }
-.first_lvl>li a:before{
+.first_lvl>li>a:before{
     content: "";
     background: url(../images/css_sprites.png);
     background-position: -52px -104px;
     width: 50px;
     height: 50px;
     position: absolute;
-    left: 0;
+    left:0;
     top: 0;
 }
 .first_lvl>li+li>a:before{
@@ -155,7 +155,14 @@ body{
 	margin: 0;
 }
 .second_lvl>li+li+li+li>a:before{
+    content: "";
+    background: url(../images/css_sprites.png);
 	background-position:0 -104px;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left:0;
+    top: 0;
 }
 .second_lvl>li+li+li+li:hover>a:before{
     background-position: -104px 104px;
@@ -219,9 +226,8 @@ body{
 
 .wrapsocial{
 	position: relative;	
-	
 }
-.social2{
+.arrow{
 	position: fixed;
 	background: url('../images/css_sprites.png');
 	background-position: -104px 0;
@@ -229,18 +235,6 @@ body{
 	left: 50%;
 	width: 50px;
 	height: 50px;
-}
-.social2>li{
-	bottom: 0;
-	left: 50%;
-	background: aqua;
-}
-.social2>li>a{
-	display: block;
-	background: url('../images/css_sprites.png');
-	background-position: -104px 0;
-}
-.social2>li>{
-
+	border:1px solid black;
 }
 
